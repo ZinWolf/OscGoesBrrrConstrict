@@ -304,13 +304,13 @@ export class DeviceFeature {
                 Rotations: [{Index: this.bioSubIndex, Speed: Math.abs(level), Clockwise: level >= 0}]
             });
         } else {
-            if (this.actuatorType != 'Constrict') {
+//            if (this.actuatorType != 'Constrict') {
                 this.parent.send({
                     type: 'ScalarCmd',
                     DeviceIndex: this.bioDeviceIndex,
                     Scalars: [{Index: this.bioSubIndex, Scalar: level, ActuatorType: this.actuatorType}]
                 });
-            }
+//            }
         }
         this.lastLevel = level;
     }
